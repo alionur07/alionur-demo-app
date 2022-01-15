@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+  </head> 
+  <body>
+    <div style="text-align: center;">
+       <h1 style="vertical-align: middle;">Welcome to AliOnur Demo Application</h1> 
+    </div>
+    <table>
+      <tr>
+          {% for header in headings %}
+          <th style="padding-right: 10px;">{{ header }}</th>   
+          {% endfor %}
+      </tr>
+        {% for row in data %}
+        <tr>
+          {% for cell in row %}
+          <td style="padding-right: 10px;">
+            {{ cell }}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="text-align: center;">
+      <h1 style="vertical-align: middle;"><script language="javascript" src="http://ir.sitekodlari.com/saat0.js"></script></h1> 
+   </div> 
+  </body>
+</html>

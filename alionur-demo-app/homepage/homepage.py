@@ -1,0 +1,22 @@
+import json
+import urllib
+
+import requests as requests
+from flask import request
+from flask import Flask, render_template
+from flask_restful import Api, Resource
+from config import db_connection, api_key
+
+app = Flask(__name__)
+api = Api(app)
+
+## Homepage
+headings = ("id", "firstname", "surname", "email", "date")
+@app.route('/')
+def table():
+    response = requests.get("http://127.0.0.1:8080/get_user", headers={"X-Api-Key": api_key})
+    result = response.json()
+    return render_template ("home_page.html", data=result, headings=headings)
+
+if __name__ == '__main__':
+    app.run(port=8080, debug=True)
