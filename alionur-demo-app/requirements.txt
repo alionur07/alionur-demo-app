@@ -1,9 +1,0 @@
-flask
-flask_restful
-psycopg2
-SQLAlchemy
-flask_sqlalchemy
-config
-Jinja2
-Werkzeug
-prometheus-flask-exporter
