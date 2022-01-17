@@ -6,9 +6,17 @@ from flask import request
 from flask import Flask, render_template
 from flask_restful import Api, Resource
 from config import db_connection, api_key
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
 api = Api(app)
+
+# static information as metric
+metrics = PrometheusMetrics(app)
+metrics.info('app_info', 'Application info', version='1.0.3')
+@app.route('/metrics')
+def main():
+    pass  # requests tracked by default
 
 ## Homepage
 headings = ("id", "firstname", "surname", "email", "date")
@@ -19,4 +27,4 @@ def table():
     return render_template ("home_page.html", data=result, headings=headings)
 
 if __name__ == '__main__':
-    app.run(port=8080, debug=True)
+    app.run(port=8080, debug=False)

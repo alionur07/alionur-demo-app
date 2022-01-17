@@ -25,7 +25,7 @@ variable "root_volume_type" {
 }
 
 variable "worker_groups_instance_type" {
-  default     = "t2.micro"
+  default     = "t2.medium"
 }
 
 variable "worker_groups_additional_userdata" {
