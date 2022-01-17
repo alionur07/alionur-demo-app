@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: 123456798/alionur-demo-app
-  tag: latest
+  tag: getapi-latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
