@@ -7,3 +7,4 @@ config
 Jinja2
 Werkzeug
 prometheus-flask-exporter
+requests

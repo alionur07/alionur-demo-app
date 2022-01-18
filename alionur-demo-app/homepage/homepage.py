@@ -11,8 +11,8 @@ from prometheus_flask_exporter import PrometheusMetrics
 app = Flask(__name__)
 api = Api(app)
 
-# static information as metric
 metrics = PrometheusMetrics(app)
+# static information as metric
 metrics.info('app_info', 'Application info', version='1.0.3')
 @app.route('/metrics')
 def main():
@@ -25,6 +25,7 @@ def table():
     response = requests.get("http://127.0.0.1:8080/get_user", headers={"X-Api-Key": api_key})
     result = response.json()
     return render_template ("home_page.html", data=result, headings=headings)
+
 
 if __name__ == '__main__':
     app.run(port=8080, debug=False)
