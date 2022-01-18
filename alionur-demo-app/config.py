@@ -4,10 +4,10 @@ import config
 
 app = Flask(__name__)
 CONFIG = {
-    'postgresHost': 'alionur-demo-app-db.c9wevahqfo8y.eu-central-1.rds.amazonaws.com',
+    'postgresHost': 'Change_ME',
     'postgresPort': '5432',
     'postgresUser': 'postgres',
-    'postgresPass': 'alionur-demo-app',
+    'postgresPass': 'Change_ME',
     'postgresDb': 'postgres',
     'api_key': 'esdpLwTdf6zP3BWrAth8ns'
 }
