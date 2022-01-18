@@ -629,7 +629,7 @@ defaultBackend:
     type: ClusterIP
     ## @param defaultBackend.service.port Default backend service port
     ##
-    port: 80
+    port: 8080
   ## Default backend Pod Disruption Budget configuration
   ## ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/
   ##

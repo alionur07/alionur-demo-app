@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: 123456798/alionur-demo-app
-  tag: getapi-latest
+  tag: homepage-latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -33,7 +33,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 ingress:
   enabled: true

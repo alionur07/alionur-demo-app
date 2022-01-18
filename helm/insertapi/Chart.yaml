@@ -1,6 +1,6 @@
 apiVersion: v2
-name: getapi
-description: getapi  application
+name: insertapi
+description: insertapi  application
 
 # A chart can be either an 'application' or a 'library' chart.
 #
