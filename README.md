@@ -21,7 +21,7 @@ Demo-app application is a project running on EKS using the authentication method
 
 # Application
 
-There is a 3 container on demo-app. 
+Source code path /alionur-demo-app 
 
 - **Insertapi** : It writes data to the database with API key authentication.
 - **Getapi**    : It returns json data from the database with API key authentication.
