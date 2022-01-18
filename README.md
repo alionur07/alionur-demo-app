@@ -28,3 +28,8 @@ The demo-app has 3 different microservices and each service description is given
 - **Insertapi** : It writes data to the database with API key authentication.
 - **Getapi**    : It returns json data from the database with API key authentication.
 - **Homepage**  : It shows the Getapi request result with simple html template
+
+# DB
+Demo application data model and table are given below. It DB backup file is **demoapp_backup.zip**
+
+![image](https://user-images.githubusercontent.com/33215825/150004769-0bb85e41-ebc9-488f-9a16-ac815c633624.png)
