@@ -21,7 +21,9 @@ Demo-app application is a project running on EKS using the authentication method
 
 # Application
 
-Source code path /alionur-demo-app 
+The demo-app has 3 different microservices and each service description is given below.
+
+- Source code path /alionur-demo-app 
 
 - **Insertapi** : It writes data to the database with API key authentication.
 - **Getapi**    : It returns json data from the database with API key authentication.
