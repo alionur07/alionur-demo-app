@@ -12,7 +12,7 @@ Demo-app application is a project running on EKS using the authentication method
 | **CI/CD** | Azure Devops |
 | **Version-Control** | Github |
 | **IAC** | Terraform Cloud |
-| **Management of Containerized applications** | Amazon EKS |
+| **Container Management Service** | Amazon EKS |
 | **Container Registery** | DockerHub |
 | **Monitoring** | Prometheus, Grafana, ElasticStack, Fluentd |
 
@@ -33,3 +33,5 @@ The demo-app has 3 different microservices and each service description is given
 Demo application data model and table are given below. The DB backup file is **demoapp_backup.zip**
 
 ![image](https://user-images.githubusercontent.com/33215825/150004769-0bb85e41-ebc9-488f-9a16-ac815c633624.png)
+
+
