@@ -34,4 +34,10 @@ Demo application data model and table are given below. The DB backup file is **d
 
 ![image](https://user-images.githubusercontent.com/33215825/150004769-0bb85e41-ebc9-488f-9a16-ac815c633624.png)
 
+- **After restore;**
+
+![image](https://user-images.githubusercontent.com/33215825/150010007-a4f7ac44-db3d-412a-bc47-3907e3a3dd61.png)
+
+
+
 
