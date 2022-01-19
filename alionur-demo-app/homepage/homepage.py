@@ -22,7 +22,7 @@ def main():
 headings = ("id", "firstname", "surname", "email", "date")
 @app.route('/')
 def table():
-    response = requests.get("getapi.default:8080/get_user", headers={"X-Api-Key": api_key})
+    response = requests.get("http://getapi.default:8080/get_user", headers={"X-Api-Key": api_key})
     result = response.json()
     return render_template ("home_page.html", data=result, headings=headings)
 
