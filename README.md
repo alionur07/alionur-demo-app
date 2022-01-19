@@ -96,7 +96,7 @@ if everything looks good:
 
 ![image](https://user-images.githubusercontent.com/33215825/150013496-11d5b054-cd8b-4271-8dea-754df09f6d3c.png)
 
-## Now we are going to deploy kube-prometheus-stack, nginx-ingress-controller, ECK
+**Now we are going to deploy kube-prometheus-stack, nginx-ingress-controller**
 ```
  helm repo add prometheus-community/kube-prometheus-stack
  helm install   kube-prometheus-stack prometheus-community/kube-prometheus-stack
