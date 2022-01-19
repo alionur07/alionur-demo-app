@@ -96,3 +96,20 @@ if everything looks good:
 
 ![image](https://user-images.githubusercontent.com/33215825/150013496-11d5b054-cd8b-4271-8dea-754df09f6d3c.png)
 
+
+## CI/CD
+
+
+
+----------------------------------
+## The application homepage
+![image](https://user-images.githubusercontent.com/33215825/150142660-ab126481-9b40-4de0-b170-dfd3044ac092.png)
+
+## Postmant insert api result
+![image](https://user-images.githubusercontent.com/33215825/150142779-cf4540b3-8233-45de-b82d-146bf3a889d1.png)
+
+## Postmant get api result
+![image](https://user-images.githubusercontent.com/33215825/150142901-112f84c6-9ab6-4547-9083-b3ad6da2246c.png)
+
+
+
