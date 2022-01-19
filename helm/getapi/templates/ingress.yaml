@@ -16,6 +16,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  ingressClassName: nginx
 {{- if .Values.ingress.tls }}
   tls:
   {{- range .Values.ingress.tls }}
@@ -33,7 +34,7 @@ spec:
         paths:
         {{- range .paths }}
           - path: {{ . }}
-            pathType: Prefix
+            pathType: Prefix 
             backend:
               service:
                 name: {{ $fullName }}
