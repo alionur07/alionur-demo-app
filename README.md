@@ -195,3 +195,16 @@ helm install fluend fluentd/ -n alionur-demo-elk
 
 ![image](https://user-images.githubusercontent.com/33215825/150213440-4319266b-ccb3-40bf-b7d0-6fb912b495bb.png)
 
+**Destroy**
+```
+cd terraform/eks
+terraform destroy -auto-approve -var-file="../secrets.auto.tfvars"
+```
+```
+cd terraform/rds
+terraform destroy -auto-approve -var-file="../secrets.auto.tfvars"
+```
+```
+cd terraform/vpc
+terraform destroy -auto-approve -var-file="../secrets.auto.tfvars"
+```
