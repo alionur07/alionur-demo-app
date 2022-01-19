@@ -96,11 +96,69 @@ if everything looks good:
 
 ![image](https://user-images.githubusercontent.com/33215825/150013496-11d5b054-cd8b-4271-8dea-754df09f6d3c.png)
 
-
+## Now we are going to deploy kube-prometheus-stack, nginx-ingress-controller, ECK
+```
+ helm repo add prometheus-community/kube-prometheus-stack
+ helm install   kube-prometheus-stack prometheus-community/kube-prometheus-stack
+```
+```
+ helm repo add bitnami/nginx-ingress-controller
+ helm install nginx-ingress-controller bitnami/nginx-ingress-controller
+```
+```
+ helm repo add elastic https://helm.elastic.co
+ helm install elastic-operator-crds elastic/eck-operator-crds
+```
 ## CI/CD
-
-
-
+**AzureDevops Build and Push Image Pipeline yaml.**
+```
+# Variable 'service' was defined in the Variables tab. 
+# If there is a separate pipeline, variable definitions : "service = getapi", "service = insertapi" , "service = hompage".
+name: $(date:yyyyMMdd)$(rev:.r)
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: ubuntu-20.04
+  steps:
+  - checkout: self
+    clean: true
+  - task: Docker@0
+    displayName: Build Homepage Image
+    inputs:
+      containerregistrytype: Container Registry
+      dockerRegistryEndpoint: 20efb320-9be0-4800-a0ca-0ad891a8a737
+      dockerFile: alionur-demo-app/Dockerfile
+      buildArguments: service=$(service)
+      imageName: ' "<docker-registery>":$(service)-latest' 
+  - task: Docker@0
+    displayName: Push Homepage Image
+    inputs:
+      containerregistrytype: Container Registry
+      dockerRegistryEndpoint: 20efb320-9be0-4800-a0ca-0ad891a8a737
+      action: Push an image
+      imageName: ' "<docker-registery>":$(service)-latest'
+      imageNamesPath: ' alionur-demo-app'
+```
+**AzureDevops Deploy App with Helm Pipeline yaml.**
+```
+steps:
+- task: HelmInstaller@0
+  displayName: 'Install Helm 3.5.4'
+  inputs:
+    helmVersion: 3.5.4
+steps:
+- task: HelmDeploy@0
+  displayName: 'helm upgrade'
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceConnection: 'alionur-demo-app'
+    command: upgrade
+    chartType: FilePath
+    chartPath: '$(System.DefaultWorkingDirectory)/alionur07_alionur-demo-app/helm/homepage'
+    releaseName: homepage
+    valueFile: '$(System.DefaultWorkingDirectory)/alionur07_alionur-demo-app/helm/homepage/values.yaml'
+```
 ----------------------------------
 ## The application homepage
 ![image](https://user-images.githubusercontent.com/33215825/150142660-ab126481-9b40-4de0-b170-dfd3044ac092.png)
@@ -112,4 +170,13 @@ if everything looks good:
 ![image](https://user-images.githubusercontent.com/33215825/150142901-112f84c6-9ab6-4547-9083-b3ad6da2246c.png)
 
 
-
+## Monitoring
+```
+kubectl port-forward svc/kube-prometheus-stack-grafana 8081:80
+```
+```
+user: admin
+pass: prom-operator
+```
+![image](https://user-images.githubusercontent.com/33215825/150185778-3c7161a4-6606-4457-b90b-17fda4e92327.png)
+![image](https://user-images.githubusercontent.com/33215825/150185933-12ccd433-f87f-4cf7-a9bf-d155538c4af2.png)
