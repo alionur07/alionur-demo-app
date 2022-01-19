@@ -105,10 +105,6 @@ if everything looks good:
  helm repo add bitnami/nginx-ingress-controller
  helm install nginx-ingress-controller bitnami/nginx-ingress-controller
 ```
-```
- helm repo add elastic https://helm.elastic.co
- helm install elastic-operator-crds elastic/eck-operator-crds
-```
 ## CI/CD
 **AzureDevops Build and Push Image Pipeline yaml.**
 ```
@@ -180,3 +176,22 @@ pass: prom-operator
 ```
 ![image](https://user-images.githubusercontent.com/33215825/150185778-3c7161a4-6606-4457-b90b-17fda4e92327.png)
 ![image](https://user-images.githubusercontent.com/33215825/150185933-12ccd433-f87f-4cf7-a9bf-d155538c4af2.png)
+
+**Logging**
+```
+kubectl create ns alionur-demo-elk
+kubectl apply -f .\all-in-one.yaml
+kubectl apply -f .\elasticsearch.yaml
+kubectl apply -f .\kibana.yaml 
+`````
+- Replace the elastic password in /ECK/fluentd/values.yaml with the received secret **elastic-eck-es-elastic-user**.
+
+![image](https://user-images.githubusercontent.com/33215825/150213912-d12a0642-08bf-4221-9773-2e31389dd4a8.png)
+
+![image](https://user-images.githubusercontent.com/33215825/150213697-37dc4bc4-acf7-4cbd-82e0-1d0d65e0fdb4.png)
+```
+helm install fluend fluentd/ -n alionur-demo-elk
+```
+
+![image](https://user-images.githubusercontent.com/33215825/150213440-4319266b-ccb3-40bf-b7d0-6fb912b495bb.png)
+
