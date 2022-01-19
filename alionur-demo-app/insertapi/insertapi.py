@@ -28,7 +28,7 @@ def insertUser():
     newFirstName = request.form['firstname']
     newSurName = request.form['surname']
     newEmail = request.form['email']
-    cur.execute("INSERT INTO users (firstname, surname, email) VALUES (%s, %s, %s)",
+    cur.execute("INSERT INTO public.users (firstname, surname, email) VALUES (%s, %s, %s)",
                 (newFirstName, newSurName, newEmail));
     db.commit()
     return "Data inserted successfully "

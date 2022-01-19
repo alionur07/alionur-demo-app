@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: 123456798/alionur-demo-app
   tag: insertapi-latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 imagePullSecrets: []
 nameOverride: ""

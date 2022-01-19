@@ -26,7 +26,7 @@ def getUser():
     auth = headers.get("X-Api-Key")
     if auth != api_key:
         return jsonify({"message": "ERROR: Unauthorized"}), 401
-    sql_query ="SELECT * FROM users order by id"
+    sql_query ="SELECT * FROM public.users order by id"
     cur.execute(sql_query)
     result = cur.fetchall()
     return jsonify(result)
