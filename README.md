@@ -17,7 +17,8 @@ Demo-app application is a project running on EKS using the authentication method
 | **Monitoring** | Prometheus, Grafana, ElasticStack, Fluentd |
 
 # Project Architecture
-![image](https://user-images.githubusercontent.com/33215825/149727335-093c3307-3688-4178-bd63-2cf09fc97f4d.png)
+![image](https://user-images.githubusercontent.com/33215825/150285633-0bdfa05e-ed41-4289-84f0-63ea06bbebc8.png)
+
 
 # Application
 
